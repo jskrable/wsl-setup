@@ -65,7 +65,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 cd $home
 
 echo "Setting up AWS CLI-----------------------------------------------------------------"
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+# curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 sudo unzip awscliv2.zip
 sudo ./aws/install
 
