@@ -13,7 +13,7 @@ alias reset=". ~/.bashrc"
 echo "Standard Updates-------------------------------------------------"
 sudo apt update && sudo apt upgrade -y
 # install some common packages
-sudo apt install git vim nano ssh curl jq
+sudo apt install git vim nano ssh curl jq zip unzip
 
 # setup z
 echo "Installing z.sh--------------------------------------------------"
@@ -62,11 +62,11 @@ curl https://pyenv.run | bash
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-
+cd $home
 
 echo "Setting up AWS CLI-----------------------------------------------"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
+sudo unzip awscliv2.zip
 sudo ./aws/install
 
 reset
@@ -81,7 +81,7 @@ echo "Sample Node installation for latest stable version:"
 echo "nvm install node"
 echo "nvm use node"
 echo ""
-echo "Sample Python installation for 3.8"
+echo "Sample Python installation for 3.8.10:"
 echo "pyenv install 3.8.10 -v"
 echo "pyenv global 3.8.10"
 echo ""
