@@ -10,13 +10,13 @@ home="$PWD"
 alias reset=". ~/.bashrc"
 
 # standard updates 
-echo "Standard Updates-------------------------------------------------"
+echo "Standard Updates-------------------------------------------------------------------"
 sudo apt update && sudo apt upgrade -y
 # install some common packages
-sudo apt install git vim nano ssh curl jq zip unzip
+sudo apt install git vim nano ssh curl jq zip unzip figlet -y
 
 # setup z
-echo "Installing z.sh--------------------------------------------------"
+echo "Installing z.sh--------------------------------------------------------------------"
 mkdir -p ~/code && cd ~/code
 git clone https://github.com/rupa/z.git
 cd z
@@ -30,7 +30,7 @@ echo "  z [fuzzy path]"
 echo "to automatically change into frequent/recent directories"
 
 # setup git ssh
-echo "Setting up Github SSH Auth---------------------------------------"
+echo "Setting up Github SSH Auth---------------------------------------------------------"
 echo "Please enter email addresses associated with BU Github Account:"
 read email
 cd ~/.ssh
@@ -43,7 +43,7 @@ echo "Once the public key is added to your github account, make sure to use the 
 cd $home
 
 # setup nvm and node
-echo "Setting up Node.js-----------------------------------------------"
+echo "Setting up Node.js-----------------------------------------------------------------"
 echo "Installing NVM..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 echo "Installing LTS Node and NPM..."
@@ -52,7 +52,7 @@ echo "Installing LTS Node and NPM..."
 # nvm use node
 
 # setup Python
-echo "Setting up Python------------------------------------------------"
+echo "Setting up Python------------------------------------------------------------------"
 echo "Installing dependencies for pyenv..."
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
@@ -64,7 +64,7 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 cd $home
 
-echo "Setting up AWS CLI-----------------------------------------------"
+echo "Setting up AWS CLI-----------------------------------------------------------------"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 sudo unzip awscliv2.zip
 sudo ./aws/install
@@ -85,4 +85,4 @@ echo "Sample Python installation for 3.8.10:"
 echo "pyenv install 3.8.10 -v"
 echo "pyenv global 3.8.10"
 echo ""
-echo "Happy commanding!"
+figlet "Happy commanding!"
